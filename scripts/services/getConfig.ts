@@ -254,12 +254,6 @@ export const getConfig: T.ExpectedExports.getConfig = async (effects) => {
               description: "Only connect to peers over Tor.",
               default: false,
             },
-            v2transport: {
-              type: "boolean",
-              name: "Use V2 P2P Transport Protocol",
-              description: "Enable or disable the use of BIP324 V2 P2P transport protocol.",
-              default: false,
-            },
             addnode: {
               name: "Add Nodes",
               description: "Add addresses of nodes to connect to.",
