@@ -161,6 +161,37 @@ actions:
       - stopped
     implementation:
       type: script
+  prioritise-transaction:
+    name: "Prioritise Transaction"
+    description: "Ensure a transaction gets prioritised in generated templates."
+    allowed-statuses:
+      - running
+      - stopped
+    implementation:
+      type: docker
+      image: main
+      system: false
+      entrypoint: prioritise-transaction.sh
+      args: []
+      io-format: json
+      mounts:
+        main: /root/.bitcoin
+    input-spec:
+      txid:
+        type: string
+        name: TXID
+        description: "The transaction ID of the transaction you wish to prioritise."
+        masked: false
+        placeholder: ""
+        nullable: false
+      fee-delta:
+        type: string
+        name: Fee-Delta
+        description: "The effective fee rate you wish your Bitcoin node to treat this transaction as having."
+        masked: true
+        placeholder: ""
+        nullable: false
+        default: ""
 migrations:
   from:
     "*":
