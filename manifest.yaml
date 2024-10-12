@@ -163,7 +163,7 @@ actions:
       type: script
   prioritise-transaction:
     name: "Prioritise Transaction"
-    description: "Ensure a transaction gets prioritised in generated templates."
+    description: "Prioritise or de-prioritise a transaction. Your Bitcoin node will treat it as though it is paying a higher or lower fee rate than it is and construct templates accordingly."
     allowed-statuses:
       - running
     implementation:
@@ -179,19 +179,21 @@ actions:
     input-spec:
       txid:
         type: string
-        name: TXID
-        description: "The transaction ID of the transaction you wish to prioritise."
+        name: Transaction ID
+        description: "The ID of the transaction you wish to prioritise."
         placeholder: ""
         nullable: false
       priority-delta:
-        type: number
+        type: string
         name: Priority Delta
         description: "The priority to add or subtract."
+        placeholder: ""
         nullable: true
       fee-delta:
-        type: number
+        type: string
         name: Fee Delta
         description: "The fee value (in satoshis) to add (or subtract, if negative)."
+        placeholder: ""
         nullable: true
 migrations:
   from:
