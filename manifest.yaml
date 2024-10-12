@@ -189,7 +189,7 @@ actions:
         description: "The priority to add or subtract."
         nullable: true
         integral: true
-        range: "[0,100]"
+        range: "[-1000000,1000000]"
         default: 0
         nullable: true
       fee-delta:
@@ -198,7 +198,7 @@ actions:
         description: "The fee value (in satoshis) to add (or subtract, if negative)."
         nullable: true
         integral: true
-        range: "[-100000,100000]"
+        range: "[-1000000,1000000]"
         default: 0
         nullable: true
 migrations:
