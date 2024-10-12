@@ -184,16 +184,22 @@ actions:
         placeholder: ""
         nullable: false
       priority-delta:
-        type: string
+        type: number
         name: Priority Delta
         description: "The priority to add or subtract."
-        placeholder: ""
+        nullable: true
+        integral: true
+        range: "[0,100]"
+        default: 0
         nullable: true
       fee-delta:
-        type: string
+        type: number
         name: Fee Delta
         description: "The fee value (in satoshis) to add (or subtract, if negative)."
-        placeholder: ""
+        nullable: true
+        integral: true
+        range: "[-100000,100000]"
+        default: 0
         nullable: true
 migrations:
   from:
