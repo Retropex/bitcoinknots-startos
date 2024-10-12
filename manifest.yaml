@@ -166,7 +166,6 @@ actions:
     description: "Ensure a transaction gets prioritised in generated templates."
     allowed-statuses:
       - running
-      - stopped
     implementation:
       type: docker
       image: main
@@ -176,22 +175,24 @@ actions:
       io-format: json
       mounts:
         main: /root/.bitcoin
+      inject: true
     input-spec:
       txid:
         type: string
         name: TXID
         description: "The transaction ID of the transaction you wish to prioritise."
-        masked: false
         placeholder: ""
         nullable: false
+      priority-delta:
+        type: number
+        name: Priority Delta
+        description: "The priority to add or subtract."
+        nullable: true
       fee-delta:
-        type: string
-        name: Fee-Delta
-        description: "The effective fee rate you wish your Bitcoin node to treat this transaction as having."
-        masked: true
-        placeholder: ""
-        nullable: false
-        default: ""
+        type: number
+        name: Fee Delta
+        description: "The fee value (in satoshis) to add (or subtract, if negative)."
+        nullable: true
 migrations:
   from:
     "*":
