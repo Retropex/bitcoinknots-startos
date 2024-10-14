@@ -68,17 +68,17 @@ export const getConfig: T.ExpectedExports.getConfig = async (effects) => {
           description: "Save the mempool on shutdown and load on restart.",
           default: true,
         },
-        maxmempool: {
-          type: "number",
-          nullable: false,
-          name: "Max Mempool Size",
-          description:
-            "Keep the transaction memory pool below <n> megabytes.",
-          range: "[1,*)",
-          integral: true,
-          units: "MiB",
-          default: 300,
-        },
+        // maxmempool: {
+        //   type: "number",
+        //   nullable: false,
+        //   name: "Max Mempool Size",
+        //   description:
+        //     "Keep the transaction memory pool below <n> megabytes.",
+        //   range: "[1,*)",
+        //   integral: true,
+        //   units: "MiB",
+        //   default: 300,
+        // },
         mempoolexpiry: {
           type: "number",
           nullable: false,
@@ -365,6 +365,17 @@ export const getConfig: T.ExpectedExports.getConfig = async (effects) => {
       name: "Advanced",
       description: "Advanced Settings",
       spec: {
+        maxmempool: {
+          type: "number",
+          nullable: false,
+          name: "Max Mempool Size",
+          description:
+            "Keep the transaction memory pool below <n> megabytes.",
+          range: "[1,*)",
+          integral: true,
+          units: "MiB",
+          default: 300,
+        },
         peers: {
           type: "object",
           name: "Peers",
