@@ -39,7 +39,7 @@ persistmempool=1
 {{#IF !blkconstr.persistmempool
 persistmempool=0
 }}
-maxmempool={{blkconstr.maxmempool}}
+maxmempool={{advanced.mempool.maxmempool}}
 mempoolexpiry={{blkconstr.mempoolexpiry}}
 
 ## PEERS
