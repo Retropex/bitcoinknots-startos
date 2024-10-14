@@ -163,7 +163,7 @@ actions:
       type: script
   prioritise-transaction:
     name: "Prioritise Transaction"
-    description: "Prioritise or de-prioritise a transaction. Your Bitcoin node will treat it as though it is paying a higher or lower fee rate than it is and construct templates accordingly."
+    description: "Prioritise or de-prioritise a transaction by telling your node to treat it as though it has a higher/lower priority or fee and construct templates accordingly."
     allowed-statuses:
       - running
     implementation:
