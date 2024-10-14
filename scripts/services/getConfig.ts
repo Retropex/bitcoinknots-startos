@@ -365,16 +365,23 @@ export const getConfig: T.ExpectedExports.getConfig = async (effects) => {
       name: "Advanced",
       description: "Advanced Settings",
       spec: {
-        maxmempool: {
-          type: "number",
-          nullable: false,
-          name: "Max Mempool Size",
-          description:
-            "Keep the transaction memory pool below <n> megabytes.",
-          range: "[1,*)",
-          integral: true,
-          units: "MiB",
-          default: 300,
+        mempool: {
+          type: "object",
+          name: "Mempool",
+          description: "Mempool Settings",
+          spec: {
+            maxmempool: {
+              type: "number",
+              nullable: false,
+              name: "Max Mempool Size",
+              description:
+                "Keep the transaction memory pool below <n> megabytes.",
+              range: "[1,*)",
+              integral: true,
+              units: "MiB",
+              default: 300,
+            },
+	  },
         },
         peers: {
           type: "object",
